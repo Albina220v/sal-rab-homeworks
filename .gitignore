@@ -6,3 +6,6 @@
 *.njsproj
 *.sln
 *.sw?
+.vs
+.vs/
+.vs/*
