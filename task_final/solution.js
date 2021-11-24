@@ -60,7 +60,7 @@
 // }
 
 function sendRequest(name, phone, address, goods, sum) {
-        let data = {
+        let obj = {
             data: {
                 client: name + " " + phone,
                 goods: [], 
@@ -78,7 +78,7 @@ function sendRequest(name, phone, address, goods, sum) {
                 title: goods[i].title,
                 count: goods[i].count
             };
-            data.goods.push(goodsItem);
+            obj.data.goods.push(goodsItem);
         }
     
     //     data.order.address = address;
@@ -86,7 +86,7 @@ function sendRequest(name, phone, address, goods, sum) {
     
     //     data.client = 'Иван';
     
-        let jsonData = JSON.stringify(data);
+        let jsonData = JSON.stringify(obj);
     
         return jsonData;
     }
