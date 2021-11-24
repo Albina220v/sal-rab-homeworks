@@ -33,37 +33,40 @@
 //    }
 // }
 
-// function sendRequest(name, phone, address, goods, sum) {
+function sendRequest(name, phone, address, goods, sum) {
 
-//     //let data = {goods: [], order: {}};
-//     let data = {client: {name, phone}, order: {address, sum}, goods: [{title, count}]};
+    //let data = {goods: [], order: {}};
+    let data = {client: {name, phone}, order: {address, sum}, goods: [{title, count}]};
 
-//     let countOfGoods = goods.length;
-//     //нет исправлений
-//     for (let i = 0; i <= countOfGoods; i += 1) {
-//     //нет исправлений
-//         data.goods.push(goods[i].title);
-//         //нет исправлений
-//     }
+    let countOfGoods = goods.length;
+    //нет исправлений
+    for (let i = 0; i <= countOfGoods; i += 1) {
+    //нет исправлений
+        data.goods.push(goods[i].title);
+        //нет исправлений
+    }
 
-//     data.order.address = address;
+    data.order.address = address;
 
-//     //data.order.sum = name + phone + address + goods + sum;
-//     data.order.sum = sum;
+    //data.order.sum = name + phone + address + goods + sum;
+    data.order.sum = sum;
 
-//     //data.client = 'Иван';
-//     data.client.name = name;
+    //data.client = 'Иван';
+    data.client.name = name;
 
-//     let jsonData = JSON.stringify(data);
+    let jsonData = JSON.stringify(data);
 
-//     return jsonData;
-// }
+    return jsonData;
+}
 
 function sendRequest(name, phone, address, goods, sum) {
         let data = {
-            client: "",
+            client: name + " " + phone,
             goods: [], 
-            order: {},
+            order: {
+                address: address,
+                sum: sum
+            },
         };
     
         let countOfGoods = goods.length;
@@ -75,11 +78,11 @@ function sendRequest(name, phone, address, goods, sum) {
             };
             data.goods.push(goodsItem);
         }
-
-        data.order.address = address;
-        data.order.sum = sum;
     
-        data.client = name + " " + phone;
+    //     data.order.address = address;
+    //     data.order.sum = name + phone + address + goods + sum;
+    
+    //     data.client = 'Иван';
     
         let jsonData = JSON.stringify(data);
     
